@@ -1,0 +1,19 @@
+RewriteEngine On
+
+Options All -Indexes
+
+
+RewriteRule ^login/$      index.php?page=login&%{QUERY_STRING} [L]
+RewriteRule ^logout/$      index.php?page=logout&%{QUERY_STRING} [L]
+RewriteRule ^register/$      index.php?page=register&%{QUERY_STRING} [L]
+
+RewriteRule ^backup/$      index.php?page=backup&%{QUERY_STRING} [L]
+RewriteRule ^listbackup/$      index.php?page=listbackup&%{QUERY_STRING} [L]
+RewriteRule ^listdatabases/([A-Za-z0-9-_]+)$      index.php?page=listdatabases&backup=$1 [L]
+
+RewriteRule ^restore/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/$      index.php?page=restore&backup=$1&database=$2 [L]
+
+RewriteRule ^crontab/$      index.php?page=crontab&%{QUERY_STRING} [L]
+RewriteRule ^automate/$      index.php?page=automate&%{QUERY_STRING} [L]
+
+RewriteRule ^404/$      index.php?page=404&%{QUERY_STRING} [L]
