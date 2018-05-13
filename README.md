@@ -1,6 +1,6 @@
 # PostGreSQL
 
-Gaby Fulchic & Rémi Mafat
+Rémi Mafat & Gaby Fulchic
 
 ## Sommaire
  
@@ -12,12 +12,12 @@ Gaby Fulchic & Rémi Mafat
 
 ## Introduction
 
-Dans le cadre d'un cours en école informatique, nous avons créer une interface web permettant de se connecter sur un serveur (local ou distant) et de créer des sauvegardes des bases de données qui s'y trouvent. Il est également possible de restaurer les bases de données. Enfin, il est aussi possible d'automatiser les sauvegardes avec une **cron**.      
+Dans le cadre d'un cours en école informatique, nous avons créé une interface web permettant de se connecter sur un serveur (local ou distant) et de créer des sauvegardes des bases de données qui s'y trouvent. Il est également possible de restaurer les bases de données. Enfin, il est aussi possible d'automatiser les sauvegardes avec une **cron**.      
 Pour cela, le tutoriel suivant décrit pas à pas les démarches à suivre pour utiliser l'interface web.
 
 ## Prérequis
 
-Pour mener à bien ce projet, il faut avoir une **VM Debian 9** de préférence, avec une connexion internet, et les accès _root_. Certaines commandes vous demanderont obligatoirement de les exécuter avec des droits d'administrateur. Nous avons personnelement installé _sudo_, mais libre à vous de choisir la méthode qui vous convient.     
+Pour mener à bien ce projet, il faut avoir une machine (hôte ou virtuelle) **Debian 9** de préférence, avec une connexion internet, et les accès _root_. Certaines commandes vous demanderont obligatoirement de les exécuter avec des droits d'administrateur. Nous avons personnelement installé _sudo_, mais libre à vous de choisir la méthode qui vous convient.     
 ```sh
 su
 apt-get install sudo
@@ -165,9 +165,9 @@ Avant de pouvoir importer les bases de données, nous devons nous assurer que le
 - post_max_size
 - upload_max_filesize
 
-On mettra respectivement les valeurs 1000MB, 400MB, 400MB car la mémoire max doit être supérieure au post et upload max.     
+On met respectivement les valeurs 1000MB, 400MB, 400MB car la mémoire max doit être supérieure au post et upload max.     
 
-On peut ensuite générer des données aléatoirement grâce au site [generatedata](https://www.generatedata.com/), qui peut nous fourni un .sql, mais il y a déjà un fichier dans le repo.     
+On peut ensuite générer des données aléatoirement grâce au site [generatedata](https://www.generatedata.com/), qui peut nous fournir un .sql. Si vous le voulez, il y a aussi des fichiers dans le repository.     
 Afin de faciliter l'utilisation de l'interface, certaines informations concernant le serveur distant sont sauvegardées en base de données (en local uniquement). Pour cela, utilisez la base de données fournit dans le dossier `/var/www/backup/`.    
 
 
